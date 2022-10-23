@@ -241,7 +241,8 @@ def build_vitmulti_transforms(is_train):
 
     # if image_set == 'val':
     return T.Compose([
-        T.RandomResize([800], max_size=1333),
+        # T.RandomResize([800], max_size=1333),
+        T.RandomResize([600], max_size=1000),
         normalize,
     ])
     # return transform

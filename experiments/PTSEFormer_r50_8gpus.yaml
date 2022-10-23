@@ -11,13 +11,13 @@ TRAIN:
   lr_drop_epochs: None
   clip_max_norm: 0.1
   sgd: False
-  output_dir: "./results/PTSEFormer_8gpus"
+  output_dir: "./results/PTSEFormer_resnet50"
   device: "cuda"
   seed: 42
-  resume: "./tmp/checkpoint_best_1.pth"
+  resume: null #"./tmp/checkpoint_best_1.pth"
   pretrained: "./pretrained/resnet50-19c8e357.pth"
   start_epoch: 0
-  eval: True
+  eval: False
   num_workers: 4
   cache_mode: False
 
@@ -59,18 +59,18 @@ LOSS:
 
 DATASET:
   dataset_file: ["DET_train_30classes", "VID_train_15frames"]  # vid coco
-  val_dataset: "VID_val_videos_1midf_each"
+  val_dataset: "VID_val_videos" #"VID_val_videos_1midf_each"
   coco_path: ""
   coco_panoptic_path: None  # todo
   remove_difficult: False
   num_classes: 30
   debug: True
-  max_offset: 12
-  min_offset: -12
+  max_offset: 7 #12
+  min_offset: -7 # -12
   ref_num_local: 2
 
 TEST:
-  batch_size: 8
+  batch_size: 1
   test_with_one_img: False
   test_ref_nums: 6
   test_max_offset: 12

@@ -51,7 +51,7 @@ def main(cfg=cfg):
     output_config_path = os.path.join(cfg.TRAIN.output_dir, 'config.yml')
 
 
-    save_config(cfg, output_config_path)
+    # save_config(cfg, output_config_path)
 
     # tb_writer = SummaryWriter(os.path.join(cfg.TRAIN.output_dir, "tb_log"))
     tb_writer = None

@@ -40,6 +40,10 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
     #
     prefetcher = data_prefetcher(data_loader, device, prefetch=True)
     samples, targets = prefetcher.next()
+    print(len(samples['ref_l']))
+    print(samples['ref_l'][0].tensors.shape) # torch.Size([1, 3, 800, 1201]) 
+    print(samples['cur'].tensors.shape) # torch.Size([1, 3, 800, 1201]) 
+    # quit()
 
     for _ in metric_logger.log_every(range(len(data_loader)), print_freq, header):
         # for ret in data_loader:

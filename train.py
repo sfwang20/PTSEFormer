@@ -29,7 +29,6 @@ from util.misc import save_config, is_main_process
 
 
 def main(cfg=cfg):
-
     parser = argparse.ArgumentParser(description="PyTorch Video Object Detection Training")
     parser.add_argument(
         "--config-file",
@@ -41,6 +40,8 @@ def main(cfg=cfg):
     parser.add_argument("--local_rank", type=int, default=-1)
     args = parser.parse_args()
     cfg.merge_from_file(args.config_file)
+    # print(cfg)
+    # quit()
     # print(is_main_process())
     if (not os.path.exists(cfg.TRAIN.output_dir)) and is_main_process():
         try:

@@ -1,0 +1,8 @@
+Training
+python train.py --config-file experiments/PTSEFormer_r50_8gpus.yaml
+
+Evaluation
+python test.py --config-file experiments/PTSEFormer_r50_8gpus.yaml
+
+Benchmark
+python benchmark.py --config-file experiments/PTSEFormer_r50_8gpus.yaml
